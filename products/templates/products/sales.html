@@ -1,0 +1,10 @@
+{% extends 'base1.html'%}
+
+{% block title %}sales{% endblock title %}
+
+{% block content %}
+<h1>Sales</h1>
+{% if graph %}
+    <img src="data:image/png;base64, {{ graph | safe}}">
+{% endif %}
+{% endblock content %}

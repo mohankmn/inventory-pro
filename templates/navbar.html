@@ -1,0 +1,16 @@
+{% url 'products:main-products-view' as path_to_performance %}
+{% url 'products:add-purchase-view' as path_to_adding_records %}
+{% url 'csvs:upload-view' as path_to_upload %}
+{% url 'customers:main-customer-view' as path_to_customers %}
+{% url 'products:sales-view' as path_to_sales %}
+
+<div class="ui inverted segment">
+    <div class="ui inverted secondary pointing menu">
+        <a class="item">Home</a>
+        <a href={{path_to_performance}} class="{% if request.path == path_to_performance %}active{% endif %} item">performance</a>
+        <a href={{path_to_adding_records}} class="{% if request.path == path_to_adding_records %}active{% endif %} item">add_records</a>
+        <a href={{path_to_sales}} class="{% if request.path == path_to_sales %}active{% endif %} item">sales</a>
+        <a href={{path_to_customers}} class="{% if request.path == path_to_customers %}active{% endif %} item">customers</a>
+        <a href={{path_to_upload}} class="{% if request.path == path_to_upload %}active{% endif %} item">upload</a>
+    </div>
+</div>
