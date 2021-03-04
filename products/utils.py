@@ -6,8 +6,9 @@ import base64
 from django.contrib.auth.models import User
 
 def get_salesman_from_id(val):
-    salesman = User.objects.get(id=val)
-    return salesman
+    print(val)
+    user = User.objects.get(id=val)
+    return user
 
 
 def get_image():

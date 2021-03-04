@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate,login,logout
 # Create your views here.
 def register(response):
 		if response.user.is_authenticated:
-			return redirect('data:item_create_url')
+			return redirect('products:item_create_url')
 		
 		else:
 			form=RegisterForm()
@@ -22,7 +22,7 @@ def register(response):
 
 def loginPage(request):
 	if request.user.is_authenticated:
-		return redirect('data:item_create_url')
+		return redirect('products:item_create_url')
 		
 	else:
 		if request.method == 'POST':
@@ -33,7 +33,7 @@ def loginPage(request):
 
 			if user is not None:
 				login(request, user)
-				return redirect('data:item_create_url')
+				return redirect('products:item_create_url')
 			else:
 				messages.error(request, 'Username OR password is incorrect')
 		return render(request, 'registration/login.html')
